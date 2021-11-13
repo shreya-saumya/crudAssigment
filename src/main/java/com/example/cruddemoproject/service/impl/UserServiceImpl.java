@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public Users updatedUser(int id, Users users) {
 
-        Users user =(Users) userRepository.findAllById(id);
+        Users user =userRepository.findAllById(id);
         user.setAddress(users.getAddress());
         user.setEmail(users.getEmail());
         user.setPhone(users.getPhone());
@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
     public Users deleteUserById(int id) {
         Users deletedUser=null;
         try{
-            deletedUser= (Users) userRepository.findAllById(id);
+            deletedUser= userRepository.findAllById(id);
             if(deletedUser==null){
                 throw new Exception("User Not Found");
             }
